@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "ESP32 DHT22 HC-SR04 ThingsBoard",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -100, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -120,
+      "left": 200,
+      "attrs": { "temperature": "25", "humidity": "60" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic",
+      "top": 120,
+      "left": 200,
+      "attrs": { "distance": "100" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -32,
+      "left": 293.6,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "dht:VCC", "esp:3V3", "red", [] ],
+    [ "dht:GND", "esp:GND.1", "black", [] ],
+    [ "dht:SDA", "esp:15", "green", [] ],
+    [ "ultrasonic:VCC", "esp:VIN", "red", [] ],
+    [ "ultrasonic:GND", "esp:GND.2", "black", [] ],
+    [ "ultrasonic:TRIG", "esp:5", "blue", [] ],
+    [ "ultrasonic:ECHO", "esp:18", "orange", [] ],
+    [ "lcd:VCC", "esp:VIN", "red", [] ],
+    [ "lcd:GND", "esp:GND.1", "black", [] ],
+    [ "lcd:SDA", "esp:21", "green", [] ],
+    [ "lcd:SCL", "esp:22", "blue", [] ]
+  ],
+  "dependencies": {}
+}
