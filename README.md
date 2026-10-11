@@ -6,3 +6,8 @@ Bài thực hành 2 IOT
 - preprocessing.py để tiền xử lý dữ liệu.
 - requirements.txt là các thư viện cần cài đặt.
 - example env.txt là ví dụ cho file .env.
+
+Hướng dẫn:
+- Điền thông tin vào file .env như example env.txt.
+- Chạy Wokwi, Thingsboard và InfluxDB.
+- Chạy file collector.py.
